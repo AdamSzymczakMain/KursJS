@@ -126,3 +126,52 @@ function howManydays(month) {
 // Finally, return the padded string.
 
 // Tutaj niestety nie byłem w stanie zrobić tego zadania próbowałem a nic nie wychodziło. Niestety będę potrzebować wytłumaczenia całego zadania
+
+//Task 10
+// Funkcja pickItprzyjmuje 1 parametr, arrktóry jest tablicą liczb. Musimy przejść arrza pomocą forpętli. Jeśli element jest liczbą nieparzystą, wypchnij go do tablicy odd, a jeśli jest liczbą parzystą, wypchnij go do eventablicy.
+
+// Zdefiniowałem dwie tablice oddi evenw funkcji, a także napisałem instrukcję return. Twoim zadaniem jest napisanie forpętli.
+
+//Pierwsza próba bez pomocy żadnej
+
+// function pickIt(arr){
+//   var odd=[],even=[];
+//   //coding here
+//   for(let i=0;i<arr.length;i++){
+//     if(i % 2){
+//       even.push()
+//     }
+//     else odd.push()
+//   }
+
+//   return [odd,even];
+// }
+
+// Kod niestety niepoprawny. przy pomocy gpt
+// function pickIt(arr){
+//   var odd=[],even=[];
+//   //coding here
+//   for(let i=0;i<arr.length;i++){
+//     if(i % 2){
+//       even.push(arr[i])
+//     }
+//     else odd.push(arr[i])
+//   }
+
+//   return [odd,even];
+// }
+
+//KOd niestety nie jest w pełni poprawny.
+
+function pickIt(arr) {
+  var odd = [],
+    even = [];
+  //coding here
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      even.push(arr[i]);
+    } else odd.push(arr[i]);
+  }
+
+  return [odd, even];
+} // poprawny kod jedak wspomagałem się gpt, poprosiłem czat aby wytłumaczył jedna nadal trochę nie do zrozumienia dla mnie jest if (arr[i] % 2 === 0) jednak uważam to za progres bo chyba właśnie w zadaniu 9 trzeba podobnie stworzyć odpowiedź 

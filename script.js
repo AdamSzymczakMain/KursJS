@@ -174,4 +174,61 @@ function pickIt(arr) {
   }
 
   return [odd, even];
-} // poprawny kod jedak wspomagałem się gpt, poprosiłem czat aby wytłumaczył jedna nadal trochę nie do zrozumienia dla mnie jest if (arr[i] % 2 === 0) jednak uważam to za progres bo chyba właśnie w zadaniu 9 trzeba podobnie stworzyć odpowiedź 
+} // poprawny kod jedak wspomagałem się gpt, poprosiłem czat aby wytłumaczył jedna nadal trochę nie do zrozumienia dla mnie jest if (arr[i] % 2 === 0) jednak uważam to za progres bo chyba właśnie w zadaniu 9 trzeba podobnie stworzyć odpowiedź
+
+//Task 11
+
+//Coding in function grabDoll. function accept 1 parameter:dolls. it's a string array, a list of some dolls.
+
+// You need traverse dolls by using for loop. If element is "Hello Kitty" or "Barbie doll", you should push it to a bag(bag is an array, I've defined in the function); if it's other strings, we should use continue skip it.
+
+// When the bag has three element, bag is full. You should use break jump out the loop; If bag is not full, you should traverse dolls until the last element.
+
+// Return the bag after for loop finished.
+
+// You should use for, break and continue in your code. otherwise, your solution may not pass this kata.
+
+// answer
+
+function grabDoll(dolls) {
+  var bag = [];
+  //coding here
+  for (let i = 0; i < dolls.length; i++) {
+    if (dolls[i] === "Barbie doll" || dolls[i] === "Hello Kitty") {
+      bag.push(dolls[i]);
+
+      if (bag.length === 3) break;
+    }
+  }
+  return bag;
+}
+
+// po ogromnej ilości prób udało się zrobić bez praktycznie żadnej pomocy i sprawdzania odpowiedzi. :D Jednak kod wpełni nie działa ponieważ nie uzyłem continue
+
+// poprawny kod
+
+function grabDoll(dolls) {
+  var bag = [];
+  //coding here
+  for (let i = 0; i < dolls.length; i++) {
+    if (dolls[i] !== "Hello Kitty" && dolls[i] !== "Barbie doll") {
+      continue;
+    }
+    bag.push(dolls[i]);
+
+    if (bag.length === 3) break;
+  }
+  return bag;
+}
+
+// taks 12
+
+// The function giveMeFive accepts 1 parameter, obj, which is an object.
+
+// Create an array (which you will eventually return). Then, traverse obj, checking each key and value. If the length of the key is equal to 5, then push the key to your array. Separately, if the length of the value is equal to 5, then push the value to your array.
+
+// At the end, return your array.
+
+// You should use for..in in your code, otherwise your solution may not pass this kata.
+
+// answer

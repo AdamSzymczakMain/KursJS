@@ -232,3 +232,21 @@ function grabDoll(dolls) {
 // You should use for..in in your code, otherwise your solution may not pass this kata.
 
 // answer
+
+function giveMeFive(obj) {
+  //coding here
+  let arr = [];
+  for (let key in obj) {
+    if (key.length === 5) {
+      arr.push(key);
+    }
+  }
+  for (let key in obj) {
+    if (obj[key].length === 5) {
+      arr.push(obj[key]);
+    }
+  }
+  return arr;
+}
+
+//

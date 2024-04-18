@@ -542,3 +542,72 @@ function alienLanguage(str) {
 // Top secret files: No. 2135
 // Super agent ZIUScE, on a dark night, stole the Lolli pop from National Museum, causing $100 million in damage.
 // You only need to choose one of the text as the answer to the question. That is to say, any one of them is the correct answer.
+
+// function topSecret(str) {
+//   //coding here...
+//   let chars = [];
+//   let min = 97;
+//   let max = 123;
+//   let minUpper = 65;
+//   let maxUpper = 90;
+
+//   for (let i = 0; i < str.length; i++) {
+//     let code = str[i].charCodeAt() - 3;
+
+//     if (code <= maxUpper && code >= minUpper) {
+//       chars.push(String.fromCharCode(code));
+//     }
+
+//     if (str[i] === " ") {
+//       chars.push(code[i]);
+//     }
+
+//     if (code < min) {
+//       chars.push(String.fromCharCode(max - (min - code)));
+//     } else {
+//       chars.push(String.fromCharCode(code));
+//     }
+//   }
+//   console.log(chars.join(""));
+
+//   return chars.join("");
+// }
+
+// topSecret("Pb qdph lv Mrkq");
+
+// kod który stworzyłem sam niestety nie dziala nie wiem jak go dalej ruszyć.
+
+// kolejna próba
+
+function topSecret(str) {
+  //coding here...
+  let chars = [];
+  let min = 97;
+  let max = 123;
+  let minUpper = 65;
+  let maxUpper = 90;
+  let maxSpecial = 35;
+  let minSpecial = 30;
+
+  for (let i = 0; i < str.length; i++) {
+    let code = str[i].charCodeAt() - 3;
+
+    if (str[i] === " ") {
+      chars.push(str[i]);
+    } else if (code <= maxUpper && code >= minUpper) {
+      chars.push(String.fromCharCode(code));
+    } else if (code <= maxSpecial && code >= minSpecial) {
+      chars.push(String.fromCharCode(code + 3));
+    } else if (code < min) {
+      chars.push(String.fromCharCode(max - (min - code)));
+    } else chars.push(String.fromCharCode(code));
+  }
+
+  console.log(chars.join(""));
+
+  return chars.join("");
+}
+
+topSecret("Pb qdph lv Mrkq");
+
+// udało się dojść do kodu końcowego.

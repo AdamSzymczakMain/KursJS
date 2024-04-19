@@ -613,6 +613,28 @@ topSecret("Pb qdph lv Mrkq");
 // task loop while
 
 function drawSix(n) {
-  
+  let i = 1;
+
+  while (i < 100) {
+    let random = Math.floor(Math.random() * n) + 1;
+    if (random === 6) {
+      console.log(`Congrats! You drew 6 in ${i} tries`);
+      break;
+    }
+
+    i++;
+  }
 }
 drawSix(6);
+
+// function drawSix(n) {
+//   for (let i = 1; i < 100; i++) {
+//     let random = Math.floor(Math.random() * n) + 1;
+//     if (random === n) {
+//       console.log(`Congrats! You drew 6 in ${i} tries`);
+//       break;
+//     }
+//   }
+// }
+
+// drawSix(6);

@@ -603,11 +603,16 @@ function topSecret(str) {
     } else chars.push(String.fromCharCode(code));
   }
 
-  console.log(chars.join(""));
-
   return chars.join("");
 }
 
 topSecret("Pb qdph lv Mrkq");
 
 // udało się dojść do kodu końcowego.
+
+// task loop while
+
+function drawSix(n) {
+  
+}
+drawSix(6);

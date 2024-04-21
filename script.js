@@ -612,17 +612,56 @@ topSecret("Pb qdph lv Mrkq");
 
 // task loop while
 
-function drawSix() {
-  let i = 1;
+// function drawSix() {
+//   let i = 1;
 
-  while (i) {
-    let random = Math.floor(Math.random() * 6) + 1;
-    if (random === 6) {
-      console.log(`Congrats! You drew 6 in ${i} tries`);
-      break;
-    }
+//   while (i) {
+//     let random = Math.floor(Math.random() * 6) + 1;
+//     if (random === 6) {
+//       console.log(`Congrats! You drew 6 in ${i} tries`);
+//       break;
+//     }
 
-    i++;
-  }
-}
-drawSix();
+//     i++;
+//   }
+// }
+// drawSix();
+
+// Task 21
+// Coding in function fiveLine, function accept 1 parameter:s. s is a string.
+
+// Please return a string of 5 lines(newline symbol is \n). The first line has one s; Second line have two s; and so on..Fifth line have five s;
+
+// Note1: The two sides of the parameter s may contain some whitespace, please clear them before using s.
+
+// Note2: Using a string template can make your job easier.
+
+// Example:
+
+// fiveLine("  a") should return "a\naa\naaa\naaaa\naaaaa"
+// a
+// aa
+// aaa
+// aaaa
+// aaaaa       <---The effect when you console.log it
+// fiveLine("  xy ")
+// should return "xy\nxyxy\nxyxyxy\nxyxyxyxy\nxyxyxyxyxy"
+// xy
+// xyxy
+// xyxyxy
+// xyxyxyxy
+// xyxyxyxyxy  <---The effect when you console.log it
+
+// answer
+
+// function fiveLine(s) {
+//   s = s.trim();
+//   let str = "";
+//   let arr = []
+//   for (let i = 0; i < 5; i++) {
+//     arr.push(str=str+s)
+//   }
+//   return arr.join('\n');
+// }
+
+// fiveLine("a");

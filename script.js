@@ -676,10 +676,58 @@ topSecret("Pb qdph lv Mrkq");
 // shuffleIt([1,2,3,4,5],[1,2],[3,4],[2,3]) should return [1,3,5,2,4]
 
 // ANSWER
-
-let shuffleIt = (arr, ...arrB) => {
-  console.log(arr);
-  console.log(arrB.join()[0]);
-};
+// niesetety nic nie jest w stanie zrobić w tym zadaniu
+let shuffleIt = (arr, ...arrB) => {};
 
 shuffleIt([1, 2, 3, 4, 5], [1, 2]);
+shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4]);
+
+//task 23
+
+// Coding in function infiniteLoop. function accept 3 parameters. The 1st parameter is arr, it's a 2D array, it contains three 1D array. The 2nd parameter is d ，it's a string. The 3rd parameter is n, it's a number.
+
+// You can think of arr as a moat, the elements of arr like water constantly flow in. The direction of flow is controlled by the parameter d. The value of d can be "left" or "right". "left" means the "river" moves to the left. All elements in the 1D array are to the left moving n position, if beyond the bounds of the array and the element is moved to the tail on the left side of the array; if it exceeds the left boundary element would be moved to the tail of 3rd array(like a circle). Right is also similar to the operation, but it is moving to the right.
+
+// Finally, return arr.
+
+// answer
+function infiniteLoop(arr, d, n) {
+  //coding here...
+
+  if (d === "left") {
+    for (let i = 0; i < n; i++) {
+      arr[2].push(arr[0].shift()) &
+        arr[1].push(arr[2].shift()) &
+        arr[0].push(arr[1].shift());
+    }
+  } else {
+    for (let i = 0; i < n; i++) {
+      arr[0].unshift(arr[2].pop()) &
+        arr[2].unshift(arr[1].pop()) &
+        arr[1].unshift(arr[0].pop());
+    }
+  }
+  console.log(arr);
+}
+
+infiniteLoop(
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ],
+  "left",
+  1
+);
+
+infiniteLoop(
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ],
+  "right",
+  1
+);
+
+// zadanie rozwiązane bez większy problemów tylko czy kod w miare czytelny to jest pytanie

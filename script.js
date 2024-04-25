@@ -666,22 +666,6 @@ topSecret("Pb qdph lv Mrkq");
 
 // fiveLine("a");
 
-// TASK 22
-// Create a function shuffleIt. The function accepts two or more parameters. The first parameter arr is an array of numbers, followed by an arbitrary number of numeric arrays. Each numeric array contains two numbers, which are indices for elements in arr (the numbers will always be within bounds). For every such array, swap the elements. Try to use all your new skills: arrow functions, the spread operator, destructuring, and rest parameters.
-
-// Example:
-
-// shuffleIt([1,2,3,4,5],[1,2]) should return [1,3,2,4,5]
-// shuffleIt([1,2,3,4,5],[1,2],[3,4]) should return [1,3,2,5,4]
-// shuffleIt([1,2,3,4,5],[1,2],[3,4],[2,3]) should return [1,3,5,2,4]
-
-// ANSWER
-// niesetety nic nie jest w stanie zrobić w tym zadaniu
-let shuffleIt = (arr, ...arrB) => {};
-
-shuffleIt([1, 2, 3, 4, 5], [1, 2]);
-shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4]);
-
 //task 23
 
 // Coding in function infiniteLoop. function accept 3 parameters. The 1st parameter is arr, it's a 2D array, it contains three 1D array. The 2nd parameter is d ，it's a string. The 3rd parameter is n, it's a number.
@@ -768,28 +752,36 @@ function threeInOne(arr) {
   let sum3 = 0;
   result = [];
   for (let i = 2; i >= 0; i--) {
-    if (arr.lenght > 6) {
+    if (arr.length > 6) {
       let newArr1 = arr.slice(0, 3);
       let newArr2 = arr.slice(3, 6);
       let newArr3 = arr.slice(6);
 
-      console.log(arr.slice(3));
-
       sum1 = sum1 + newArr1[i];
       sum2 = sum2 + newArr2[i];
       sum3 = sum3 + newArr3[i];
-    } else if (arr.length > 3) {
+    } else if (arr.length > 4) {
       let newArr1 = arr.slice(0, 3);
       let newArr2 = arr.slice(3);
 
       sum1 = sum1 + newArr1[i];
       sum2 = sum2 + newArr2[i];
+    } else {
+      let newArr1 = arr.slice(0, 3);
+      sum1 = sum1 + newArr1[i];
     }
   }
-  result.push(sum1, sum2, sum3);
-  // console.log(result);
+  if (sum3 === 0 && sum2 > 0) {
+    result.push(sum1, sum2);
+  } else if (sum2 === 0) {
+    result.push(sum1);
+  } else {
+    result.push(sum1, sum2, sum3);
+  }
+
   return result;
 }
 // console.log(sum1);
-
+threeInOne([1, 2, 3]);
+threeInOne([1, 2, 3, 4, 5, 6]);
 threeInOne([1, 2, 3, 4, 5, 6, 7, 8, 9]);

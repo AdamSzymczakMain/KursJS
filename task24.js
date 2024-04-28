@@ -64,19 +64,49 @@
 // }
 // console.log(sum1);
 
-function threeInOne(arr) {
-  let result = [];
+// function threeInOne(arr) {
+//   let result = [];
 
+//   let sum = 0;
+//   if (arr < 4) {
+//     for (let i = 0; i < arr.length; i++) {
+//       let newArry = arr.slice(0, 3);
+
+//       sum = sum + newArry[i];
+//     }
+//   } else {
+//     for (let i = 0; i < arr.length; i++) {
+//       let newArry = arr.slice();
+//       let new2 = newArry.splice(0, 3);
+//       sum = sum + newArry[i];
+//       console.log(new2);
+//       // console.log(sum);
+//     }
+//   }
+//   result.push(sum);
+// }
+
+// function threeInOne(arr) {
+//   let newArry = arr.slice();
+//   let result = [];
+
+//   for (let i = 0; i < newArry.length; i++) {
+//     let arr2 = newArry.splice(0, 3);
+//     // console.log(arr2[i]);
+//     for (let j = 0; j < arr2.length; j++) {
+//       // console.log(arr2);
+//       console.log(arr2[i]);
+//       // console.log(sum);
+//     }
+//   }
+// }
+
+function threeInOne(arr) {
+  let sum = 0;
   for (let i = 0; i < arr.length; i++) {
-    let new2 = arr.splice(0, 3);
-    let sum = 0;
-    for (let j = 0; j < new2.length; i++) {
-      sum = sum + new2[i];
-    }
-    console.log(sum);
+    sum += arr.slice(i, i + 3);
   }
   console.log(sum);
-  console.log(result);
 }
 
 threeInOne([1, 2, 3]);

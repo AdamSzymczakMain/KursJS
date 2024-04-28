@@ -66,15 +66,19 @@
 
 function threeInOne(arr) {
   let result = [];
+
   for (let i = 0; i < arr.length; i++) {
-    arr.slice();
+    let new2 = arr.splice(0, 3);
+    let sum = 0;
+    for (let j = 0; j < new2.length; i++) {
+      sum = sum + new2[i];
+    }
+    console.log(sum);
   }
+  console.log(sum);
+  console.log(result);
 }
 
 threeInOne([1, 2, 3]);
-threeInOne([1, 2, 3, 4, 5, 6]);
-threeInOne([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-
-let test = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let a = test.splice(0, 3);
-// console.log(a);
+// threeInOne([1, 2, 3, 4, 5, 6]);
+// threeInOne([1, 2, 3, 4, 5, 6, 7, 8, 9]);

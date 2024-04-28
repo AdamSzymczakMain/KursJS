@@ -13,7 +13,6 @@ let shuffleIt = (arr, ...arrB) => {
   for (let i = 0; i < arrB.length; i++) {
     let [from, to] = arrB[i];
     [arr[from], arr[to]] = [arr[to], arr[from]];
-    console.log(arr);
   }
 };
 

@@ -117,7 +117,7 @@ function threeInOne(arr) {
     let num3 = newArr[i] + 2;
     result.push(num1 + num2 + num3);
   }
-  console.log(result);
+
   return result;
 }
 

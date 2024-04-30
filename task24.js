@@ -101,14 +101,45 @@
 //   }
 // }
 
+// rozwiązanie
+
 function threeInOne(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr.slice(i, i + 3);
+  let newArr = arr.slice();
+  let result = [];
+
+  for (let i = 0; i < newArr.length; i = i + 3) {
+    let num1 = newArr[i];
+    let num2 = newArr[i] + 1;
+    let num3 = newArr[i] + 2;
+    result.push(num1 + num2 + num3);
   }
-  console.log(sum);
+  console.log(result);
+  return result;
 }
 
-threeInOne([1, 2, 3]);
+// threeInOne([1, 2, 3]);
 // threeInOne([1, 2, 3, 4, 5, 6]);
 // threeInOne([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+// function threeInOne(arr) {
+//   let result = [];
+
+//   for (let i = 0; i < arr.length; i = i + 3) {
+//     let newArr = arr.splice(0, 3);
+//     let sum = 0;
+
+//     for (let j = 0; j < newArr.length; j++) {
+//       sum = sum + newArr[j];
+//       console.log(sum);
+//     }
+//     result.push(sum);
+//   }
+
+//   return result;
+// }
+
+// threeInOne([1, 2, 3]);
+// threeInOne([1, 2, 3, 4, 5, 6]);
+
+// threeInOne([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+threeInOne([1, 3, 5, 2, 4, 6, 7, 7, 7]);

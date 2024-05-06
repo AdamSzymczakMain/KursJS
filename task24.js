@@ -113,8 +113,8 @@ function threeInOne(arr) {
 
   for (let i = 0; i < newArr.length; i = i + 3) {
     let num1 = newArr[i];
-    let num2 = newArr[i] + 1;
-    let num3 = newArr[i] + 2;
+    let num2 = newArr[i + 1];
+    let num3 = newArr[i + 2];
     result.push(num1 + num2 + num3);
   }
 

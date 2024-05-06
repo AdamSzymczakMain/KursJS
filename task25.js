@@ -24,8 +24,7 @@ function sortIt(arr) {
   // console.log(newArr);
 
   for (let i = 0; i < newArr.length; i++) {
-
-    if(){}
+    // if(){}
   }
 }
 
@@ -33,5 +32,3 @@ sortIt([1, 1, 3, 4, 6, 2, 5]);
 sortIt([1, 1, 1, 2, 2, 3]);
 sortIt([1, 1, 1, 2, 2, 2, 3, 3, 3]);
 sortIt([1, 3, 2, 4, 4, 5, 5, 6, 6]);
-
-

@@ -20,12 +20,25 @@
 
 function sortIt(arr) {
   let newArr = arr.slice();
-  newArr.sort((a, b) => b - a);
+  let number = {};
+  for (let i = 0; i < newArr.length; i++) {
+    if (number[newArr[i]]) {
+      number[newArr[i]] += 1;
+    } else number[newArr[i]] = 1;
+  }
 
+  newArr.sort((a, b) => {
+    if (number[a] === number[b]) {
+      return b - a;
+    }
+    return number[a] - number[b];
+  });
   console.log(newArr);
 }
 
 sortIt([1, 1, 1, 2, 2, 3]);
 sortIt([1, 1, 1, 2, 2, 2, 3, 3, 3]);
-// sortIt([1, 3, 2, 4, 4, 5, 5, 6, 6]);
-// sortIt([1, 1, 3, 4, 6, 2, 5]);
+sortIt([1, 3, 2, 4, 4, 5, 5, 6, 6]);
+sortIt([1, 1, 3, 4, 6, 2, 5]);
+
+// rozwiązanie zrobione z pomocą, niestety nie potrafiłem policzyć ilość występowania licz oraz następnie posortować ich

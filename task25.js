@@ -33,7 +33,6 @@ function sortIt(arr) {
     }
     return number[a] - number[b];
   });
-  console.log(newArr);
 }
 
 sortIt([1, 1, 1, 2, 2, 3]);

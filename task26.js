@@ -22,12 +22,87 @@
 // }
 
 function isolateIt(arr) {
-  let result = arr.map((arr) => {
-    if (arr.length % 2) {
-      str1 = arr.slice(0, 1);
-      str2 = arr;
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(arr[i].length);
+    let word = arr[i];
+    let length = word.length;
+    if (length % 2 === 0) {
+      let half = length / 2;
+      // console.log(length, half);
+      let firstHalf = word.slice(0, half);
+      let secondHalf = word.slice(half, length);
+      newArray.push(firstHalf + "|" + secondHalf);
+    } else {
+      let half = length / 2 - 0.5;
+
+      let test = word.split("");
+      test[half] = "|";
+
+      newArray.push(test.join(""));
+    }
+  }
+  console.log(newArray);
+  return newArray;
+}
+
+function isolateIt(arr) {
+  return arr.map((word) => {
+    let length = word.length;
+    if (length % 2 === 0) {
+      let half = length / 2;
+      // console.log(length, half);
+      let firstHalf = word.slice(0, half);
+      let secondHalf = word.slice(half, length);
+      return firstHalf + "|" + secondHalf;
+    } else {
+      let half = length / 2 - 0.5;
+
+      let test = word.split("");
+      test[half] = "|";
+
+      return test.join("");
     }
   });
 }
+console.log(
+  isolateIt(["abcd", "efgh"]),
+  isolateIt(["abcde", "fghij"]),
+  isolateIt(["1234", "56789"])
+);
+//////////////////////////////////////
 
-isolateIt(["abcd", "efgh"]);
+// array = [
+//   { width: 10, height: 2 },
+//   { width: 2, height: 3 },
+//   { width: 12, height: 12 },
+// ];
+
+// const newArray = array.map((a) => {
+//   let square = a.height === a.width;
+
+//   return { area: a.height * a.width, isSquare: square };
+// });
+// console.log(newArray);
+
+// array = [
+//   { firstName: "Adam", lastName: "Szymczak", age: 20 },
+//   { firstName: "Grzegorz", lastName: "Twardowski", age: 21 },
+//   { firstName: "John", lastName: "Doe", age: 22 },
+// ];
+
+// const newArray = array.map((a) => {
+//   return { username: a.firstName + " " + a.lastName };
+// });
+// console.log(newArray);
+// let sum = 0;
+// for (let i = 0; i < array.length; i++) {
+//   let age = array[i].age;
+
+//   sum = sum + age;
+// }
+
+// array.forEach((a) => {
+//   sum = sum + a.age;
+// });
+// console.log(sum);

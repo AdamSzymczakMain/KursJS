@@ -65,11 +65,11 @@ function isolateIt(arr) {
     }
   });
 }
-console.log(
-  isolateIt(["abcd", "efgh"]),
-  isolateIt(["abcde", "fghij"]),
-  isolateIt(["1234", "56789"])
-);
+// console.log(
+//   isolateIt(["abcd", "efgh"]),
+//   isolateIt(["abcde", "fghij"]),
+//   isolateIt(["1234", "56789"])
+// );
 //////////////////////////////////////
 
 // array = [

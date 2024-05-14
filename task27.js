@@ -13,12 +13,19 @@
 // countGrade([50,60,70,80,90,100]) should return {S:1, A:1, B:1, C:2, D:1, X:0}
 // countGrade([65,75,,85,85,95,100,100]) should return {S:2, A:1, B:2, C:2, D:0, X:0}
 // countGrade([-1,-1,-1,-1,-1,-1]) should return {S:0, A:0, B:0, C:0, D:0, X:6}
+
 function countGrade(scores) {
+  let score = { S: 0, A: 0, B: 0, C: 0, D: 0, X: 0 };
   for (let i = 0; i < scores.length; i++) {
-    console.log(scores[i]);
+    if (scores[i] === 100) score.S = score.S + 1;
+    else if ((scores[i] < 100) & (scores[i] >= 90)) score.A = score.A + 1;
+    else if ((scores[i] < 90) & (scores[i] >= 80)) score.B = score.B + 1;
+    else if ((scores[i] < 80) & (scores[i] >= 60)) score.C = score.C + 1;
+    else if ((scores[i] < 60) & (scores[i] >= 0)) score.D = score.D + 1;
+    else if (scores[i] === -1) score.X = score.X + 1;
   }
 }
 
 countGrade([50, 60, 70, 80, 90, 100]);
-// countGrade([65, 75, , 85, 85, 95, 100, 100]);
-// countGrade([-1, -1, -1, -1, -1, -1]);
+countGrade([65, 75, , 85, 85, 95, 100, 100]);
+countGrade([-1, -1, -1, -1, -1, -1]);

@@ -8,7 +8,7 @@ function mirrorImage(arr) {
     let a = arr[i];
     let b = arr[i + 1];
     let mirrorNumber = arr[i + 1].toString().split("").reverse().join("");
-    console.log(mirrorNumber, a, b);
+
     if (a === b) return [a, b];
     else if (a === mirrorNumber) return [a, mirrorNumber];
     else return [-1, -1];

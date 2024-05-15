@@ -5,16 +5,16 @@
 // If no such number is found, return[-1,-1]
 function mirrorImage(arr) {
   arr.some((x, i) => {
-    a = arr[i];
-    b = arr[i + 1];
-    if (a === b) return a, b;
-    else {
-      for(let i = 0; i < arr[i].length)
-    }
+    let a = arr[i];
+    let b = arr[i + 1];
+    let mirrorNumber = arr[i + 1].toString().split("").reverse().join("");
+    console.log(mirrorNumber, a, b);
+    if (a === b) return [a, b];
+    else if (a === mirrorNumber) return [a, mirrorNumber];
+    else return [-1, -1];
   });
-  console.log(a, b);
 }
 
-mirrorImage([11, 22, 33, 33, 22, 11]);
-// mirrorImage([454, 86, 57, 75, 16, 88]);
+mirrorImage([454, 86, 57, 75, 16, 88]);
+// mirrorImage([11, 22, 33, 33, 22, 11]);
 // mirrorImage([454, 0, 57, 0, 16, 88]);
